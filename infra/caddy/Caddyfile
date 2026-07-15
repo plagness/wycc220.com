@@ -2,7 +2,7 @@
 	email admin@wycc220.com
 }
 
-wycc220.com {
+wycc220.com, www.wycc220.com {
 	encode zstd gzip
 	reverse_proxy 127.0.0.1:3000
 
@@ -15,6 +15,6 @@ wycc220.com {
 	}
 }
 
-www.wycc220.com, wycc220.ru, www.wycc220.ru, elwycco.com, www.elwycco.com, elwycco.ru, www.elwycco.ru {
+wycc220.ru, www.wycc220.ru, elwycco.com, www.elwycco.com, elwycco.ru, www.elwycco.ru {
 	redir https://wycc220.com{uri} permanent
 }
