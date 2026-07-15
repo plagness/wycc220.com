@@ -41,10 +41,11 @@ export class TelegramClient {
     method: string,
     params: Readonly<Record<string, unknown>> = {},
     signal?: AbortSignal,
+    timeoutMs = 15_000,
   ): Promise<T> {
     const requestSignal = signal
-      ? AbortSignal.any([signal, AbortSignal.timeout(15_000)])
-      : AbortSignal.timeout(15_000);
+      ? AbortSignal.any([signal, AbortSignal.timeout(timeoutMs)])
+      : AbortSignal.timeout(timeoutMs);
     const response = await this.fetchImpl(`${this.endpoint}/${method}`, {
       method: "POST",
       headers: { "content-type": "application/json" },
@@ -79,6 +80,7 @@ export class TelegramClient {
       "getUpdates",
       { offset, timeout: 30, allowed_updates: allowedUpdates },
       signal,
+      40_000,
     );
   }
 }
