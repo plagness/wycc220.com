@@ -1,100 +1,89 @@
-import { Badge, FeatureCard, SectionHeading } from "@wycc220/ui";
+import Link from "next/link";
+import { Badge } from "@wycc220/ui";
+import { NavigationIcon } from "../components/navigation.icon";
 
-const sections = [
+const directions = [
   {
-    marker: "01",
-    title: "Смотреть",
-    description: "Видео, стримы и моменты — с поиском и ссылкой на оригинал.",
-    status: "Каталог",
+    href: "/arts",
+    icon: "art" as const,
+    index: "01",
+    title: "Арты",
+    description: "Галерея работ сообщества с авторством и ссылкой на источник.",
   },
   {
-    marker: "02",
-    title: "Играть",
+    href: "/games",
+    icon: "games" as const,
+    index: "02",
+    title: "Игры",
     description:
-      "Самостоятельные фанатские игры в изолированной web-песочнице.",
-    status: "Babylon.js",
+      "Фанатские браузерные игры — от маленьких экспериментов до 3D.",
   },
   {
-    marker: "03",
-    title: "Создавать",
+    href: "/development",
+    icon: "development" as const,
+    index: "03",
+    title: "Разработка",
     description:
-      "Галерея работ с авторством, лицензией и прозрачной модерацией.",
-    status: "Сообщество",
-  },
-  {
-    marker: "04",
-    title: "Исследовать",
-    description:
-      "Открытое API и понятные агрегаты активности без торговли данными.",
-    status: "API v1",
+      "Открытый код, документация и отдельные направления для команд.",
   },
 ] as const;
 
 export default function Home() {
   return (
-    <main>
-      <header className="site.header">
-        <a className="wordmark" href="#top" aria-label="wycc220.com — наверх">
-          wycc<span>220</span>.com
-        </a>
-        <nav aria-label="Основная навигация">
-          <a href="#directions">Разделы</a>
-          <a href="https://github.com/plagness/wycc220.com">GitHub</a>
-        </nav>
-      </header>
-
-      <section className="hero" id="top">
-        <div className="hero.copy">
-          <Badge>Неофициальный фанатский проект</Badge>
+    <>
+      <section className="home.hero">
+        <div>
+          <Badge>Некоммерческий фанатский хаб</Badge>
           <h1>
-            Архивируем.
+            Создано
             <br />
-            Играем.
-            <br />
-            <span>Создаём.</span>
+            <span>сообществом.</span>
           </h1>
-          <p className="lead">
-            Открытая площадка вокруг творчества wycc220 / elwycco. Никакой
-            рекламы, платного доступа и самопродвижения — только работы
-            сообщества.
+          <p className="page.lead">
+            Арты, игры и открытые инструменты вокруг творчества wycc220 /
+            elwycco. Без рекламы, платного доступа и попыток говорить от имени
+            Максона.
           </p>
-          <div className="hero.actions">
-            <a className="button.primary" href="#directions">
-              Смотреть направления
-            </a>
-            <a
-              className="button.ghost"
-              href="https://github.com/plagness/wycc220.com"
-            >
-              Начать разработку ↗
-            </a>
+          <div className="action.row">
+            <Link className="touch.button primary" href="/games">
+              Смотреть проекты
+            </Link>
+            <Link className="touch.button secondary" href="/development">
+              Присоединиться
+            </Link>
           </div>
         </div>
-        <aside className="signal" aria-label="Статус платформы">
-          <span className="signal.dot" />
-          <p>Foundation / dev</p>
-          <strong>Сообщество строит открытую платформу</strong>
-          <small>Мейнтейнеры модерируют инфраструктуру, а не творчество.</small>
+        <aside className="status.panel">
+          <span className="status.light" />
+          <p>DEV / FOUNDATION</p>
+          <strong>Платформа открыта для новых команд</strong>
+          <small>Выбирайте направление и делайте независимый кусок.</small>
         </aside>
       </section>
 
-      <section className="directions" id="directions">
-        <SectionHeading
-          eyebrow="Карта платформы"
-          title="Разные команды. Общие правила."
-          description="Каждое направление развивается независимо и соединяется через версионируемые контракты."
-        />
-        <div className="feature.grid">
-          {sections.map((section) => (
-            <FeatureCard key={section.marker} {...section} />
+      <section className="page.section">
+        <header className="section.header">
+          <p>Направления</p>
+          <h2>Что уже заложено</h2>
+        </header>
+        <div className="direction.grid">
+          {directions.map((direction) => (
+            <Link
+              className="direction.card"
+              href={direction.href}
+              key={direction.href}
+            >
+              <div className="direction.meta">
+                <span>{direction.index}</span>
+                <NavigationIcon name={direction.icon} />
+              </div>
+              <h3>{direction.title}</h3>
+              <p>{direction.description}</p>
+              <strong>Открыть →</strong>
+            </Link>
           ))}
         </div>
       </section>
-
-      <footer>
-        <strong>wycc220.com</strong>
-        <p>Неофициально. Некоммерчески. Сделано фанатами.</p>
-      </footer>
-    </main>
+    </>
   );
 }
