@@ -1,0 +1,26 @@
+[Unit]
+Description=wycc220.com web application
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=wycc220
+Group=wycc220
+WorkingDirectory=/srv/wycc220/repository/apps/web
+Environment=NODE_ENV=production
+Environment=PORT=3000
+Environment=HOSTNAME=127.0.0.1
+ExecStart=/usr/bin/node .next/standalone/apps/web/server.js
+Restart=on-failure
+RestartSec=5
+TimeoutStopSec=20
+
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/srv/wycc220
+
+[Install]
+WantedBy=multi-user.target
