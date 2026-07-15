@@ -17,6 +17,7 @@ apps/
   web/       публичный сайт и каталог
   api/       публичное версионируемое API
   collector/ фоновые адаптеры YouTube, Twitch и Telegram
+  telegram.bot/ Legion220Bot: канал, чат, личка и Twitch-анонсы
 games/
   starter.babylon/ рабочий шаблон браузерной 3D-игры
 packages/
@@ -28,7 +29,7 @@ docs/        архитектура, безопасность и правила 
 
 Подробнее: [архитектура](./docs/architecture.md), [команды](./docs/team.ownership.md), [рабочий процесс](./docs/development.workflow.md), [безопасность](./SECURITY.md), [участие в разработке](./CONTRIBUTING.md), [ведение Git и файлов](./docs/repository.guidelines.md).
 
-Руководства направлений: [сайт](./apps/web/README.md), [API](./docs/api.development.md), [игры](./docs/game.development.md), [collectors](./docs/collector.development.md), [дизайн-система](./docs/design.system.md).
+Руководства направлений: [сайт](./apps/web/README.md), [API](./docs/api.development.md), [игры](./docs/game.development.md), [Telegram bot](./docs/telegram.bot.md), [collectors](./docs/collector.development.md), [дизайн-система](./docs/design.system.md).
 
 ## Локальный запуск
 

@@ -10,9 +10,11 @@
 /packages/ui/ @plagness
 /apps/api/ @plagness
 /apps/collector/ @plagness
+/apps/telegram.bot/ @plagness
 /games/ @plagness
 /packages/game.sdk/ @plagness
 /docs/design.system.md @plagness
 /docs/api.development.md @plagness
 /docs/game.development.md @plagness
 /docs/collector.development.md @plagness
+/docs/telegram.bot.md @plagness

@@ -1,0 +1,15 @@
+export const allowedUpdates = [
+  "message",
+  "edited_message",
+  "channel_post",
+  "edited_channel_post",
+  "callback_query",
+  "my_chat_member",
+  "chat_member",
+  "chat_join_request",
+  "message_reaction",
+  "message_reaction_count",
+  "guest_message",
+  "managed_bot",
+  "subscription",
+] as const;
