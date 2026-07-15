@@ -11,7 +11,7 @@
     "test": "node --test"
   },
   "dependencies": {
-    "@babylonjs/core": "8.10.1",
+    "@babylonjs/core": "9.16.2",
     "@wycc220/game.sdk": "workspace:*"
   },
   "devDependencies": {
