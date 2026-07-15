@@ -1,0 +1,11 @@
+{
+  "schemaVersion": 1,
+  "slug": "starter.babylon",
+  "title": "Babylon.js starter",
+  "summary": "Минимальная безопасная 3D-сцена для разработки фанатской игры.",
+  "authors": [{ "name": "wycc220.com contributors" }],
+  "launchUrl": "/",
+  "sourceUrl": "https://github.com/plagness/wycc220.com/tree/dev/games/starter.babylon",
+  "license": "AGPL-3.0-only",
+  "permissions": ["fullscreen", "gamepad"]
+}

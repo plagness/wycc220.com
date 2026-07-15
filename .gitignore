@@ -29,3 +29,6 @@ secrets/
 .data/
 *.log
 
+# Local browser test artifacts
+.playwright-cli/
+output/playwright/

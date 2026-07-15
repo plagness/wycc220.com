@@ -3,6 +3,7 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   poweredByHeader: false,
   reactStrictMode: true,
+  transpilePackages: ["@wycc220/ui"],
   async headers() {
     return [
       {

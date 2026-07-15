@@ -1,0 +1,115 @@
+:root {
+  color-scheme: dark;
+  --color-canvas: #090a0c;
+  --color-surface: #121418;
+  --color-surface-raised: #191c21;
+  --color-text: #f2f1ea;
+  --color-muted: #96999f;
+  --color-line: #30343a;
+  --line-subtle: rgb(255 255 255 / 0.025);
+  --color-accent: #c6ff3d;
+  --color-accent-ink: #101306;
+  --color-danger: #ff5c5c;
+  --font-sans: Inter, Arial, sans-serif;
+  --font-display: "Arial Narrow", Impact, sans-serif;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-12: 96px;
+}
+
+.ui\.badge {
+  display: inline-flex;
+  padding: 7px 10px;
+  border: 1px solid var(--color-accent);
+  color: var(--color-accent);
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.ui\.section\.heading {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: var(--space-5);
+  align-items: end;
+}
+
+.ui\.section\.heading p {
+  color: var(--color-accent);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.ui\.section\.heading h2 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  line-height: 0.95;
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+}
+
+.ui\.section\.heading span {
+  grid-column: 2;
+  max-width: 600px;
+  color: var(--color-muted);
+  line-height: 1.6;
+}
+
+.ui\.feature\.card {
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-5);
+  border-right: 1px solid var(--color-line);
+  border-bottom: 1px solid var(--color-line);
+  background: color-mix(in srgb, var(--color-canvas) 92%, transparent);
+  transition: background 160ms ease;
+}
+
+.ui\.feature\.card:hover {
+  background: var(--color-surface);
+}
+
+.ui\.feature\.meta {
+  display: flex;
+  justify-content: space-between;
+  color: var(--color-muted);
+  font-family: monospace;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+}
+
+.ui\.feature\.card h3 {
+  margin: auto 0 var(--space-4);
+  font-family: var(--font-display);
+  font-size: 2.4rem;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+}
+
+.ui\.feature\.card p {
+  min-height: 4.5em;
+  margin: 0;
+  color: var(--color-muted);
+  line-height: 1.5;
+}
+
+@media (max-width: 560px) {
+  .ui\.section\.heading {
+    grid-template-columns: 1fr;
+  }
+
+  .ui\.section\.heading span {
+    grid-column: 1;
+  }
+}

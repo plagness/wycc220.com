@@ -17,12 +17,18 @@ apps/
   web/       публичный сайт и каталог
   api/       публичное версионируемое API
   collector/ фоновые адаптеры YouTube, Twitch и Telegram
+games/
+  starter.babylon/ рабочий шаблон браузерной 3D-игры
 packages/
   contracts/ общие схемы и публичные типы API
+  ui/        дизайн-токены и переиспользуемые компоненты
+  game.sdk/  безопасный мост игры с host-платформой
 docs/        архитектура, безопасность и правила данных
 ```
 
-Подробнее: [архитектура](./docs/architecture.md), [безопасность](./SECURITY.md), [участие в разработке](./CONTRIBUTING.md), [ведение Git и файлов](./docs/repository.guidelines.md).
+Подробнее: [архитектура](./docs/architecture.md), [команды](./docs/team.ownership.md), [рабочий процесс](./docs/development.workflow.md), [безопасность](./SECURITY.md), [участие в разработке](./CONTRIBUTING.md), [ведение Git и файлов](./docs/repository.guidelines.md).
+
+Руководства направлений: [сайт](./apps/web/README.md), [API](./docs/api.development.md), [игры](./docs/game.development.md), [collectors](./docs/collector.development.md), [дизайн-система](./docs/design.system.md).
 
 ## Локальный запуск
 

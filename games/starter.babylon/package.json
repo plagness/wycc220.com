@@ -1,0 +1,21 @@
+{
+  "name": "@wycc220/game.starter.babylon",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "vite build",
+    "dev": "vite --port 3010",
+    "lint": "tsc --noEmit",
+    "typecheck": "tsc --noEmit",
+    "test": "node --test"
+  },
+  "dependencies": {
+    "@babylonjs/core": "8.10.1",
+    "@wycc220/game.sdk": "workspace:*"
+  },
+  "devDependencies": {
+    "typescript": "5.8.3",
+    "vite": "7.1.7"
+  }
+}
