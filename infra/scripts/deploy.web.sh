@@ -20,6 +20,7 @@ sudo -u wycc220 git -C "${repository_dir}" checkout main
 sudo -u wycc220 git -C "${repository_dir}" reset --hard origin/main
 sudo -u wycc220 /usr/local/bin/pnpm --dir "${repository_dir}" install --frozen-lockfile
 sudo -u wycc220 /usr/local/bin/pnpm --dir "${repository_dir}" --filter @wycc220/web build
+sudo -u wycc220 /usr/local/bin/pnpm --dir "${repository_dir}" --filter @wycc220/telegram.bot build
 install -d -o wycc220 -g wycc220 "${repository_dir}/apps/web/.next/standalone/apps/web/.next"
 rm -rf "${repository_dir}/apps/web/.next/standalone/apps/web/.next/static"
 cp -a "${repository_dir}/apps/web/.next/static" \
@@ -27,4 +28,5 @@ cp -a "${repository_dir}/apps/web/.next/static" \
 chown -R wycc220:wycc220 "${repository_dir}/apps/web/.next/standalone/apps/web/.next/static"
 
 systemctl restart wycc220.web.service
+systemctl restart wycc220.telegram.bot.service
 systemctl reload caddy

@@ -1,0 +1,5 @@
+# One IPv4 address or CIDR per line.
+# Listed destinations bypass the Tailscale exit node.
+#
+# 203.0.113.10/32
+# 198.51.100.0/24

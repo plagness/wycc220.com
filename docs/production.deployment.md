@@ -10,6 +10,8 @@ redirect to it while preserving the request path and query string.
 - `wycc220.web.service` — Next.js standalone server bound to `127.0.0.1:3000`;
 - Caddy — public HTTP/HTTPS endpoint, TLS renewal and canonical redirects;
 - `wycc220` — unprivileged operating-system user running the application.
+- `/etc/wycc220/telegram.bot.env` — root-managed Telegram bot secrets;
+- `/etc/wycc220/direct.routes` — destinations that bypass the Tailscale exit node.
 
 Production secrets must live outside the repository in root-owned environment
 files. Never place API keys, bot tokens or private SSH keys in Git.
@@ -28,6 +30,14 @@ files. Never place API keys, bot tokens or private SSH keys in Git.
 The deployment script discards local server-side changes, installs the exact
 lockfile dependencies, builds the web application and restarts the service.
 The VDS is a deployment target, not a development workspace.
+
+Outbound traffic uses the configured Tailscale exit node. Public traffic sourced
+from the VDS address bypasses it so SSH and HTTPS replies remain symmetric. Add
+one IPv4 address or CIDR per line to `/etc/wycc220/direct.routes`, then run:
+
+```bash
+sudo systemctl restart wycc220.direct.routes.service
+```
 
 ## Verification
 

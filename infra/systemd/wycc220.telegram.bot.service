@@ -1,0 +1,24 @@
+[Unit]
+Description=Legion220 Telegram bot
+After=network-online.target tailscaled.service
+Wants=network-online.target tailscaled.service
+
+[Service]
+Type=simple
+User=wycc220
+Group=wycc220
+WorkingDirectory=/srv/wycc220/repository/apps/telegram.bot
+Environment=NODE_ENV=production
+EnvironmentFile=/etc/wycc220/telegram.bot.env
+ExecStart=/usr/bin/node dist/main.js
+Restart=on-failure
+RestartSec=5
+
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/srv/wycc220
+
+[Install]
+WantedBy=multi-user.target

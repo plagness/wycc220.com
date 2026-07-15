@@ -1,0 +1,12 @@
+[Unit]
+Description=Apply direct routes around Tailscale exit node
+After=network-online.target tailscaled.service
+Wants=network-online.target tailscaled.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/sbin/apply.wycc220.direct.routes
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
