@@ -2,6 +2,5 @@
 * @plagness
 /.github/ @plagness
 /SECURITY.md @plagness
-/docs/SECURITY-MODEL.md @plagness
+/docs/security.model.md @plagness
 /packages/contracts/ @plagness
-
