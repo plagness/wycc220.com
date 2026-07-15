@@ -15,7 +15,7 @@
     "@wycc220/game.sdk": "workspace:*"
   },
   "devDependencies": {
-    "typescript": "5.8.3",
+    "typescript": "7.0.2",
     "vite": "7.1.7"
   }
 }
